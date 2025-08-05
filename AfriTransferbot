@@ -1,0 +1,36 @@
+# commands.py
+
+from telegram import Update
+from telegram.ext import ContextTypes
+
+async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text(
+        "Sannu! Ni ne AfriTransfer bot.\n"
+        "Za ka iya amfani da wadannan commands:\n"
+        "/start - Fara\n"
+        "/rate - Nuna kudin canji\n"
+        "/fundwallet - Ƙara kudi\n"
+        "/sendmoney - Tura kudi\n"
+        "/help - Taimako"
+    )
+
+async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text(
+        "Tuntube mu idan kana bukatar taimako.\n"
+        "Email: support@afritransfer.com"
+    )
+
+async def rate(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text(
+        "Yanzu 1 USD = 1500 NGN.\n\n(Sample rate ne, zaka iya hada API na gaske)"
+    )
+
+async def fund_wallet(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text(
+        "Domin ƙara kudi, tuntuɓi admin ko ziyarci website ɗin mu."
+    )
+
+async def send_money(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text(
+        "Domin tura kudi, zabi asusun da za ka aika."
+    )
